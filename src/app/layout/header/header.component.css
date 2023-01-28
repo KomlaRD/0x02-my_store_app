@@ -3,9 +3,10 @@
   background: #33B5E5;
   color: #fff;
   padding: 12px;
-  text-decoration: none;
 }
 
 a {
   color: #ffffff;
+  text-decoration: none;
+  margin: 10px;
 }
