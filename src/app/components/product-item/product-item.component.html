@@ -1,11 +1,9 @@
 <!--Dynamically add data from json file here-->
-<section class="product-container">
-    <img alt="product-image" src="https://via.placeholder.com/50" class="product-image"/>
-    <h2>Place name of product here</h2>
-    <h2>Place price of product here</h2>
+<section class="product-container" *ngFor="let product of data">
+    <img alt="product-image" src={{product.url}} class="product-image"/>
+    <h2>{{ product.name }}</h2>
+    <h2>{{ product.price }}</h2>
     <input type="number" placeholder="1" min="1" class="select-input">
     <br>
     <button type="submit" name="Add to cart">Add to cart</button>
-
 </section>
-
