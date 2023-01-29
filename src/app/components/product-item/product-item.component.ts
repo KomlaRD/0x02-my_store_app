@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Products } from 'src/app/models/product';
 import { product } from 'src/app/models/products';
 @Component({
@@ -14,13 +15,15 @@ export class ProductItemComponent {
 
   productDetails (product: Products) {
     this.selectedProduct = product;
+    this.router.navigate(['/products']);
   }
 
   addToCart () {
     window.alert('Product has been added to cart');
   }
   
-  constructor () {
+  constructor (private router: Router) {
     this.selectedProduct = new Products;
+   
   }
 }
