@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class CartComponent {
 
+  confirmationPage() {
+    window.alert("Product order has been received");
+  }
+
 }
