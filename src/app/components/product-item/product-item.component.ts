@@ -10,11 +10,17 @@ export class ProductItemComponent {
 
   product: Products[] = product;
 
-  productDetails () {
-    window.alert('Product Details loading');
+  selectedProduct: Products;
+
+  productDetails (product: Products) {
+    this.selectedProduct = product;
   }
 
   addToCart () {
     window.alert('Product has been added to cart');
+  }
+  
+  constructor () {
+    this.selectedProduct = new Products;
   }
 }

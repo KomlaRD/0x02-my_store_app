@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Products } from 'src/app/models/product';
+import { product } from 'src/app/models/products';
 
 @Component({
   selector: 'app-product-item-detail',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-item-detail.component.css']
 })
 export class ProductItemDetailComponent {
+
+  @Input() product: Products;
+
+  constructor() {
+    this.product = new Products();
+  }
+
+  addToCart () {
+    
+  }
 
 }
