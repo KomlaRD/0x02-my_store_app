@@ -1,5 +1,5 @@
 <!--Dynamically add data from json file here-->
-<section class="product-container" *ngFor="let product of data">
+<section class="product-container" *ngFor="let product of product">
     <img alt="product-image" src={{product.url}} class="product-image" (click)="productDetails()"/>
     <h2>{{ product.name }}</h2>
     <h2>{{ product.price }}</h2>
