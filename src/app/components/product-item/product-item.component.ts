@@ -6,10 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-item.component.css'],
 })
 export class ProductItemComponent {
-  name: string = 'Book';
-  price: number = 600;
-  order: number = 1;
-
   data = [
     {
       id: 1,
@@ -54,4 +50,12 @@ export class ProductItemComponent {
       description: 'Wear it with style!',
     },
   ];
+
+  productDetails () {
+    window.alert('Product Details loading');
+  }
+
+  addToCart () {
+    window.alert('Product has been added to cart');
+  }
 }
