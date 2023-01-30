@@ -14,8 +14,8 @@ export class ProductItemComponent {
   selectedProduct: Products;
 
   productDetails (product: Products) {
-    this.selectedProduct = product;
     this.router.navigate(['/products']);
+    this.selectedProduct = product; 
   }
 
   addToCart () {
@@ -24,6 +24,5 @@ export class ProductItemComponent {
   
   constructor (private router: Router) {
     this.selectedProduct = new Products;
-   
   }
 }

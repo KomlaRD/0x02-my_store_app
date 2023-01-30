@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -9,6 +10,12 @@ export class CartComponent {
 
   confirmationPage() {
     window.alert("Product order has been received");
+    this.router.navigate(["confirmation"]);
   }
 
-}
+  constructor (private router: Router) {
+
+  }
+
+  
+  }

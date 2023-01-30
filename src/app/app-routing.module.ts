@@ -4,11 +4,13 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { CartComponent } from './components/cart/cart.component';
 import { ProductItemDetailComponent } from './components/product-item-detail/product-item-detail.component';
 import { ProductItemComponent } from './components/product-item/product-item.component';
+import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 
 const routes: Routes = [
   {path: "", component: ProductListComponent},
   {path: "cart", component: CartComponent},
-  {path: "products", component: ProductItemDetailComponent}
+  {path: "products", component: ProductItemDetailComponent},
+  {path: "confirmation", component: ConfirmationComponent}
 ];
 
 @NgModule({
