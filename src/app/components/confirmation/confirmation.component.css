@@ -18,3 +18,9 @@
 .confirmation-item {
   margin-bottom: 30px;
 }
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
