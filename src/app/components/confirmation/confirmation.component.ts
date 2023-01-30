@@ -8,5 +8,11 @@ import { Router } from '@angular/router';
 })
 export class ConfirmationComponent {
 
+  backToProduct() {
+    this.router.navigate(["/"]);
+  }
 
+  constructor(private router: Router) {
+
+  };
 }
