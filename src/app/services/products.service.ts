@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Products } from '../models/product';
+import { product } from '../models/products';
 
 @Injectable({
   providedIn: 'root'
@@ -6,4 +8,8 @@ import { Injectable } from '@angular/core';
 export class ProductsService {
 
   constructor() { }
+
+  getProducts(): Products[] {
+    return product;
+  }
 }

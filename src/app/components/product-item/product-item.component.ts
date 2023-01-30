@@ -1,15 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Products } from 'src/app/models/product';
-import { product } from 'src/app/models/products';
+import { ProductsService } from 'src/app/services/products.service';
 @Component({
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',
   styleUrls: ['./product-item.component.css'],
 })
-export class ProductItemComponent {
+export class ProductItemComponent implements OnInit {
 
-  product: Products[] = product;
+  product: Products[];
 
   selectedProduct: Products;
 
@@ -22,7 +22,13 @@ export class ProductItemComponent {
     window.alert('Product has been added to cart');
   }
   
-  constructor (private router: Router) {
+  constructor (private router: Router, private productService: ProductsService) {
     this.selectedProduct = new Products;
+    this.product = [];
   }
+  ngOnInit(): void {
+    this.product = this.productService.getProducts();
+  }
+
+
 }
