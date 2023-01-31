@@ -7,10 +7,11 @@ import { ProductItemComponent } from './components/product-item/product-item.com
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 
 const routes: Routes = [
-  {path: "", component: ProductListComponent},
+  {path: "home", component: ProductListComponent},
   {path: "cart", component: CartComponent},
   {path: "products", component: ProductItemDetailComponent},
-  {path: "confirmation", component: ConfirmationComponent}
+  {path: "confirmation", component: ConfirmationComponent},
+  {path:"", redirectTo: "home", pathMatch: "full"}
 ];
 
 @NgModule({

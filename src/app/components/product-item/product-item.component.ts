@@ -14,7 +14,7 @@ export class ProductItemComponent implements OnInit {
   selectedProduct: Products;
 
   productDetails (product: Products) {
-    this.router.navigate(['/products']);
+    //this.router.navigate(['/products']);
     this.selectedProduct = product; 
   }
 
@@ -29,6 +29,4 @@ export class ProductItemComponent implements OnInit {
   ngOnInit(): void {
     this.product = this.productService.getProducts();
   }
-
-
 }
