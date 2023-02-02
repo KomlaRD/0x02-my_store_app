@@ -22,7 +22,7 @@ export class ProductItemDetailComponent {
   ngOnInit() {
     let id = this.route.snapshot.params['id'];
     this.product = this.productService.getProduct(id);
-    this.selectedProduct = this.productService.getProduct(id);;
+    //this.selectedProduct = this.productService.getSelectedProduct();;
   }
 
   addToCart() {}

@@ -1,7 +1,7 @@
 <section class="product-container">
-    <img alt="product-image" src={{selectedProduct.url}} class="product-image" *ngIf="selectedProduct.id"/>
-    <h2>{{ selectedProduct.name }}</h2>
-    <h2>{{ selectedProduct.price }}</h2>
+    <img alt="product-image" src={{product.url}} class="product-image" *ngIf="product.id"/>
+    <h2>{{ product.name }}</h2>
+    <h2>{{ product.price }}</h2>
     <input type="number" placeholder="1" min="1" class="select-input">
     <br>
     <br>
@@ -10,4 +10,6 @@
     <br>
     <button (click)="goBack()">Back to product list</button>
 </section>
+
+//TODO: fix the rendering of the selected product 
 

@@ -14,8 +14,8 @@ export class ProductItemComponent implements OnInit {
   selectedProduct: Products;
 
   productDetails (product: Products) {
-    //this.selectedProduct = product; 
     this.router.navigate(['/products', product.id]);
+    this.selectedProduct = product;
   }
 
   addToCart () {
