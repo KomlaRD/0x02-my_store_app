@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Products } from 'src/app/models/product';
 import { product } from 'src/app/models/products';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-product-item-detail',
@@ -9,11 +10,15 @@ import { product } from 'src/app/models/products';
 })
 export class ProductItemDetailComponent {
   @Input() product: Products;
-  selectedProduct: Products;
+  @Input() selectedProduct: Products;
 
-  constructor() {
+  constructor(private productService: ProductsService) {
     this.product = new Products();
-    this.selectedProduct = new Products;
+    this.selectedProduct = new Products();
+  }
+
+  ngOnInit() {
+    this.selectedProduct = this.productService.getSelectedProduct();
   }
 
   addToCart() {}

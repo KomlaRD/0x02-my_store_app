@@ -1,8 +1,9 @@
 <section class="product-container">
-    <img alt="product-image" src={{product.url}} class="product-image" *ngIf="product"/>
-    <h2>{{ product.name }}</h2>
-    <h2>{{ product.price }}</h2>
+    <img alt="product-image" src={{selectedProduct.url}} class="product-image" *ngIf="selectedProduct.url"/>
+    <h2>{{ selectedProduct.name }}</h2>
+    <h2>{{ selectedProduct.price }}</h2>
     <input type="number" placeholder="1" min="1" class="select-input">
     <br>
     <button type="submit" name="Add to cart" (click)="addToCart()">Add to cart</button>
 </section>
+
