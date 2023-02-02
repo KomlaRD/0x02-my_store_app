@@ -18,7 +18,7 @@ export class ProductItemDetailComponent {
   }
 
   ngOnInit() {
-    this.selectedProduct = this.productService.getSelectedProduct();
+    this.selectedProduct = this.productService.getSelectedProduct();;
   }
 
   addToCart() {}

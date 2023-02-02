@@ -23,7 +23,6 @@ export class ProductsService {
   }
 
   getSelectedProduct(): Products {
-    return product.filter((product) => product.name)[0]; {
-  }
+    return product.filter((product) => product.url)[0];
 }
 }
