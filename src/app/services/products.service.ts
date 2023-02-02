@@ -18,7 +18,7 @@ export class ProductsService {
   getProduct(id: number): Products {
     return product.filter((product) => {
       product.id === id;
-    }) [0];
+    }) [1];
 
   }
 
@@ -26,3 +26,11 @@ export class ProductsService {
     return product.filter((product) => product.url)[0];
 }
 }
+
+
+//  getProduct(id: number): Products {
+//     return product.filter((product) => {
+//       product.id === id;
+//     }) [0];
+
+//   }

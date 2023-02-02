@@ -1,6 +1,6 @@
 <!--Dynamically add data from json file here-->
 <section class="product-container" *ngFor="let product of product">
-    <img alt="product-image" src={{product.url}} class="product-image" (click)="productDetails(product) "/>
+    <img alt="product-image" src={{product.url}} class="product-image" (click)="productDetails(product)" [routerLink]="['/product', product.id]"/>
     <h2>{{ product.name }}</h2>
     <h2>{{ product.price }}</h2>
     <input type="number" placeholder="1" min="1" class="select-input">
@@ -8,4 +8,9 @@
     <button type="submit" name="Add to cart" (click)="addToCart()">Add to cart</button>
 </section>
 <!-- <app-product-item-detail [product]="selectedProduct"></app-product-item-detail> -->
+
+
+
+
+<!-- [routerLink]="['/product', product.id]" -->
 

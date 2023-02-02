@@ -1,11 +1,13 @@
 <section class="product-container">
-    <img alt="product-image" src={{selectedProduct.url}} class="product-image" *ngIf="selectedProduct.url"/>
+    <img alt="product-image" src={{selectedProduct.url}} class="product-image" *ngIf="selectedProduct.id"/>
     <h2>{{ selectedProduct.name }}</h2>
     <h2>{{ selectedProduct.price }}</h2>
     <input type="number" placeholder="1" min="1" class="select-input">
     <br>
+    <br>
     <button type="submit" name="Add to cart" (click)="addToCart()">Add to cart</button>
     <br>
-    <span><a routerLink="/home">Back to product list</a></span>
+    <br>
+    <button (click)="goBack()">Back to product list</button>
 </section>
 
