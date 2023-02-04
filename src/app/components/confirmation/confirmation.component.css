@@ -19,7 +19,7 @@
   margin-bottom: 30px;
 }
 
-button {
+.align-button {
   display: flex;
   align-items: center;
   justify-content: center;

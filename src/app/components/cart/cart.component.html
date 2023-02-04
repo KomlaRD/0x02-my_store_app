@@ -1,15 +1,25 @@
 <div class="cart-container">
-    <form class="cart-panel">
+    <form #orderSubmit="ngForm" class="cart-panel; form-margin" novalidate (ngSubmit)="onSubmit()">
         <label>Checkout form</label>
         <br>
-        <input type="text" name="Full name" placeholder="(minimum 3 characters)" autocomplete="off" minlength="3" class="form-margin" required>
-        <br>
-        <input type="address" name="Address" placeholder="(minimum 6 characters)" autocomplete="off" minlength="6" required>
-        <br> 
-        <input type="number" name="Credit card number" placeholder="(16-digit-number)" autocomplete="off" minlength="16" required>
-        <br>
-        <input type="submit" value="Submit" class="btn btn-primary" (click)="confirmationPage()">
-        <!-- <button type="submit" name="Submit" class="btn btn-primary">Submit</button> -->
+        <p>
+            <mat-form-field>
+                  <input #fullName="ngModel"  matInput type="text" name="Full name" placeholder="(minimum 3 characters)" autocomplete="off" 
+                  minlength="3" class="form-margin" required [(ngModel)]="user.fullName">
+                  <mat-error>Name is required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                  <input #address="ngModel"  matInput type="address" name="Address" placeholder="(minimum 6 characters)"
+                   autocomplete="off" minlength="6" required [(ngModel)]="user.address">
+                   <mat-error>Address is required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                   <input #creditCard matInput type="number" name="Credit card number" placeholder="(16-digit-number)"
+                    autocomplete="off" minlength="16" required [(ngModel)]="user.creditCard">
+                    <mat-error>Credit card number is required</mat-error>
+            </mat-form-field>
+        </p>
+         <button mat-button type="submit" [disabled]="orderSubmit.form.invalid">Submit</button> 
     </form>
 </div>
 
