@@ -1,19 +1,22 @@
 <div class="cart-container">
     <form #orderSubmit="ngForm" class="cart-panel; form-margin" novalidate (ngSubmit)="onSubmit()">
-        <label>Checkout form</label>
+        <label class="label">Checkout form</label>
         <br>
         <p>
             <mat-form-field>
-                  <input #fullName="ngModel"  matInput type="text" name="Full name" placeholder="(minimum 3 characters)" autocomplete="off" 
-                  minlength="3" class="form-margin" required [(ngModel)]="user.fullName">
+                <h2 class="label">Full Name</h2>
+                  <input #fullName="ngModel"  matInput type="text" name="Full name" placeholder="(minimum 3 characters)" minlength="3" required [(ngModel)]="user.fullName">
                   <mat-error>Name is required</mat-error>
             </mat-form-field>
+            <br>
             <mat-form-field>
-                  <input #address="ngModel"  matInput type="address" name="Address" placeholder="(minimum 6 characters)"
-                   autocomplete="off" minlength="6" required [(ngModel)]="user.address">
+                <h2 class="label">Address</h2>
+                  <input #address="ngModel"  matInput type="address" name="Address" placeholder="(minimum 6 characters)" minlength="6" required [(ngModel)]="user.address">
                    <mat-error>Address is required</mat-error>
             </mat-form-field>
+            <br>
             <mat-form-field>
+                <h2 class="label">Credit card number</h2>
                    <input #creditCard matInput type="number" name="Credit card number" placeholder="(16-digit-number)"
                     autocomplete="off" minlength="16" required [(ngModel)]="user.creditCard">
                     <mat-error>Credit card number is required</mat-error>

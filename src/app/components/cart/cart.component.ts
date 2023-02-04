@@ -14,7 +14,7 @@ export class CartComponent {
   user = {
     fullName: " ",
     address: " ",
-    creditCard: 1234123412341234
+    creditCard: null
   }
 
   confirmationPage() {
