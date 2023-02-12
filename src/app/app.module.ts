@@ -19,6 +19,7 @@ import { ProductsService } from './services/products.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatToolbarModule
   ],
   providers: [
     ProductsService
