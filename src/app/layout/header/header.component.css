@@ -2,7 +2,9 @@
   text-align: center;
   background: #33B5E5;
   color: #fff;
-  padding: 12px;
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif
 }
 
 a {
@@ -12,5 +14,5 @@ a {
 }
 
 .active {
-  background-color: brown;
+  background-color: blueviolet;
 }
