@@ -12,7 +12,7 @@ import { Location } from '@angular/common';
 })
 export class ProductItemDetailComponent {
   product: Products;
-  @Input() selectedProduct: Products;
+  selectedProduct: Products;
 
   constructor(private productService: ProductsService, private location: Location, private route: ActivatedRoute) {
     this.product = new Products();
@@ -22,7 +22,6 @@ export class ProductItemDetailComponent {
   ngOnInit() {
     let id = this.route.snapshot.params['id'];
     this.product = this.productService.getProduct(id);
-    //this.selectedProduct = this.productService.getSelectedProduct();;
   }
 
   addToCart() {}

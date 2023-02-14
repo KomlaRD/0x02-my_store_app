@@ -16,12 +16,12 @@ export class ProductsService {
 
  // Method to return a particular product based on id
   getProduct(id: number): Products {
-    return product.filter(product => product.id === id)[0];
+    return product.filter(product => product.id === product.id)[id -1];
     }
 
 
-  getSelectedProduct(): Products {
-    return product.filter((product) => product.id)[0];
+  getSelectedProduct(id: number): Products {
+    return product.filter((product) => product.id === product.id)[id]
 }
 }
 
