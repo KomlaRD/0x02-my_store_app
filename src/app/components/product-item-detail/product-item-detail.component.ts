@@ -1,8 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Products } from 'src/app/models/product';
-import { product } from 'src/app/models/products';
 import { ProductsService } from 'src/app/services/products.service';
-import { Params, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
