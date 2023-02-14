@@ -12,11 +12,9 @@ import { Location } from '@angular/common';
 })
 export class ProductItemDetailComponent {
   product: Products;
-  selectedProduct: Products;
 
   constructor(private productService: ProductsService, private location: Location, private route: ActivatedRoute) {
     this.product = new Products();
-    this.selectedProduct = new Products();
   }
 
   ngOnInit() {
