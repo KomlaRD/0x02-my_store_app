@@ -18,17 +18,5 @@ export class ProductsService {
   getProduct(id: number): Products {
     return product.filter(product => product.id === product.id)[id -1];
     }
-
-
-  getSelectedProduct(id: number): Products {
-    return product.filter((product) => product.id === product.id)[id]
-}
 }
 
-
-//  getProduct(id: number): Products {
-//     return product.filter((product) => {
-//       product.id === id;
-//     }) [0];
-
-//   }

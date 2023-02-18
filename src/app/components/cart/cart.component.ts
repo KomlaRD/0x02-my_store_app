@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-cart',
@@ -8,12 +9,7 @@ import { Router } from '@angular/router';
 })
 export class CartComponent {
 
-  // User object for two way data binding
-  user = {
-    fullName: " ",
-    address: " ",
-    creditCard: null
-  }
+  user = new User();
 
   confirmationPage() {
     window.alert("Product order has been received");
