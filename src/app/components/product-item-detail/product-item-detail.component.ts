@@ -21,7 +21,9 @@ export class ProductItemDetailComponent {
     this.product = this.productService.getProduct(id);
   }
 
-  addToCart() {}
+  addToCart(id: number) {
+    console.log(id)
+  }
 
   // Button method to go back to homepage
   goBack() {
