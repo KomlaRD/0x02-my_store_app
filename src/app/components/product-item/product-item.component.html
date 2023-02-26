@@ -3,10 +3,9 @@
     <img alt="product-image" src={{product.url}} class="product-image" (click)="productDetails(product)" [routerLink]="['/product', product.id]"/>
     <h2>{{ product.name }}</h2>
     <h2>{{ product.price }}</h2>
-    <input type="number" placeholder="1" min="1" class="select-input">
+    <form novalidate>
+        <input type="number" placeholder="1" min="1" class="select-input" [(ngModel)]="orderNumber">
+    </form>
     <br>
     <button type="submit" name="Add to cart" (click)="addToCart()">Add to cart</button>
 </section>
-
-
-

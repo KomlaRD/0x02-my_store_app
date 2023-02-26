@@ -13,6 +13,9 @@ export class ProductItemComponent implements OnInit {
 
   selectedProduct: Products;
 
+  // Number of products added to cart
+  orderNumber: number = 0;
+
   productDetails (product: Products) {
     this.router.navigate(['/products', product.id]);
     this.selectedProduct = product;
