@@ -1,4 +1,13 @@
 <div class="cart-container">
+    <section class="cart-item" *ngFor="let item of items">
+        <img alt="product-image" src={{item.url}}/>
+        <h2>{{ item.name }}</h2>
+        <h2>{{ item.price }}</h2>
+        <input type="number" placeholder="1" min="1" class="select-input">
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <h2>Total: {{ item.quantity * item.price }}</h2>
+    </section>
     <form #orderSubmit="ngForm" class="cart-panel; form-margin" novalidate (ngSubmit)="onSubmit()">
         <label class="label">Checkout form</label>
         <br>
@@ -6,13 +15,13 @@
             <mat-form-field>
                 <h2 class="label">Full Name</h2>
                   <input #fullName="ngModel"  matInput type="text" name="Full name" placeholder="(minimum 3 characters)" minlength="3" required [(ngModel)]="user.fullName">
-                  <mat-error>Name is required</mat-error>
+                  <mat-error *ngIf="fullName.errors?.['required']">Name is required</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field>
                 <h2 class="label">Address</h2>
                   <input #address="ngModel"  matInput type="address" name="Address" placeholder="(minimum 6 characters)" minlength="6" required [(ngModel)]="user.address">
-                   <mat-error>Address is required</mat-error>
+                   <mat-error *ngIf="address.errors?.['required']">Address is required</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field>
@@ -22,7 +31,6 @@
                     <mat-error>Credit card number is required</mat-error>
             </mat-form-field>
         </p>
-         <button mat-button type="submit" [disabled]="orderSubmit.form.invalid">Submit</button> 
+         <button mat-raised-button type="submit" [disabled]="orderSubmit.form.invalid">Submit</button> 
     </form>
 </div>
-

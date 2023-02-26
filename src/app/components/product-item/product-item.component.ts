@@ -14,20 +14,23 @@ export class ProductItemComponent implements OnInit {
   selectedProduct: Products;
 
   // Number of products added to cart
-  orderNumber: number = 0;
+  orderNumber: number;
 
   productDetails (product: Products) {
     this.router.navigate(['/products', product.id]);
     this.selectedProduct = product;
   }
 
-  addToCart () {
+  addToCart (id: number) {
     window.alert('Product has been added to cart');
+    console.log(id);
+    this.orderNumber = this.orderNumber;
   }
   
   constructor (private router: Router, private productService: ProductsService) {
     this.selectedProduct = new Products;
     this.product = [];
+    this.orderNumber = 1;
   }
   ngOnInit(): void {
     this.product = this.productService.getProducts();

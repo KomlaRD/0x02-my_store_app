@@ -4,8 +4,8 @@
     <h2>{{ product.name }}</h2>
     <h2>{{ product.price }}</h2>
     <form novalidate>
-        <input type="number" placeholder="1" min="1" class="select-input" [(ngModel)]="orderNumber">
+        <input [(ngModel)]="orderNumber" type="number" placeholder="1" min="1" class="select-input" name="orders">
+        &nbsp;
+        <button mat-raised-button type="submit" name="Add to cart" (click)="addToCart(product.id)">Add to cart</button>
     </form>
-    <br>
-    <button type="submit" name="Add to cart" (click)="addToCart()">Add to cart</button>
 </section>

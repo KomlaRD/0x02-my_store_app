@@ -3,6 +3,7 @@ import { Products } from 'src/app/models/product';
 import { ProductsService } from 'src/app/services/products.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-product-item-detail',
@@ -11,8 +12,9 @@ import { Location } from '@angular/common';
 })
 export class ProductItemDetailComponent {
   product: Products;
+  quantity: number = 0;
 
-  constructor(private productService: ProductsService, private location: Location, private route: ActivatedRoute) {
+  constructor(private productService: ProductsService, private location: Location, private route: ActivatedRoute, private cart: CartService) {
     this.product = new Products();
   }
 
@@ -22,7 +24,9 @@ export class ProductItemDetailComponent {
   }
 
   addToCart(id: number) {
-    console.log(id)
+    this.cart.addToCart(this.product, this.quantity)
+    this.quantity = 1;
+    window.alert("Your product has been added to cart");
   }
 
   // Button method to go back to homepage
