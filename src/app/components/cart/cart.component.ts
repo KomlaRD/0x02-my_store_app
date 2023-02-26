@@ -1,23 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
+import { ProductsService } from 'src/app/services/products.service';
+import { Products } from 'src/app/models/product';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent {
+export class CartComponent implements OnInit {
 
+  cartProduct: Products[];
   user = new User();
 
-  confirmationPage() {
-    window.alert("Product order has been received");
-    this.router.navigate(["confirmation"]);
-  }
-
-  constructor (private router: Router) {
-
+  constructor (private router: Router, private productsService: ProductsService) {
+         this.cartProduct = [];
   }
 
   onSubmit() {
@@ -26,4 +24,7 @@ export class CartComponent {
     this.router.navigate(["confirmation"]);
   }
 
+  ngOnInit(): void {
+    this.cartProduct = this.productsService.getProducts();
+  }
   }
