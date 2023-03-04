@@ -1,12 +1,14 @@
 <div class="cart-container">
-    <section class="cart-item" *ngFor="let item of items">
+    <section class="cart-item-details" *ngFor="let item of items">
         <img alt="product-image" src={{item.url}}/>
-        <h2>{{ item.name }}</h2>
-        <h2>{{ item.price }}</h2>
-        <input type="number" placeholder="1" min="1" class="select-input">
         <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <h2>Total: {{ item.quantity * item.price }}</h2>
+        <h2>{{ item.name }}</h2>
+        <br>
+        <h2>{{ "$" + item.price }}</h2>
+        <br>
+        <input type="number" placeholder="1" min="1" class="input">
+        <br>
+        <h2>Total: {{ "$" + item.quantity * item.price }}</h2>
     </section>
     <form #orderSubmit="ngForm" class="cart-panel; form-margin" novalidate (ngSubmit)="onSubmit()">
         <label class="label">Checkout form</label>

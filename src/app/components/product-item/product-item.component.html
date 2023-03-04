@@ -2,9 +2,9 @@
 <section class="product-container" *ngFor="let product of product">
     <img alt="product-image" src={{product.url}} class="product-image" (click)="productDetails(product)" [routerLink]="['/product', product.id]"/>
     <h2>{{ product.name }}</h2>
-    <h2>{{ product.price }}</h2>
+    <h2>{{ "$" + product.price }}</h2>
     <form novalidate>
-        <input [(ngModel)]="orderNumber" type="number" placeholder="1" min="1" class="select-input" name="orders">
+        <input [(ngModel)]="quantity" type="number" placeholder="1" min="1" class="select-input" name="orders">
         &nbsp;
         <button mat-raised-button type="submit" name="Add to cart" (click)="addToCart(product.id)">Add to cart</button>
     </form>

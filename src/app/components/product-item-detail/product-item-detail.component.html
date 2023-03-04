@@ -1,8 +1,8 @@
 <section class="product-container" *ngIf="product.id">
     <img alt="product-image" src={{product.url}} class="product-image"/>
     <h2>{{ product.name }}</h2>
-    <h2>{{ product.price }}</h2>
-    <input type="number" placeholder="1" min="1" class="select-input">
+    <h2>{{ "$" + product.price }}</h2>
+    <input type="number" placeholder="1" min="1" class="select-input" [(ngModel)]="quantity">
     <br>
     <br>
     <button mat-raised-button type="submit" name="Add to cart" (click)="addToCart(product.id)">Add to cart</button>

@@ -13,19 +13,16 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartComponent implements OnInit {
 
-  cartProduct: Items[];
   items: Items[];
   user = new User();
-  @Input() quantity: number = 0;
 
   constructor (private router: Router, private productsService: ProductsService, private cartService: CartService) {
-         this.cartProduct = this.cartService.items;
-         this.items = [];
+         this.items = this.cartService.items;
   }
 
   removeFromCart(products: Products): void {
     this.cartService.removeFromCart(products);
-    this.cartProduct = this.cartService.items;
+    this.items = this.cartService.items;
   }
 
   onSubmit() {
@@ -35,6 +32,6 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-     this.cartProduct = this.cartService.items;
+
   }
   }
