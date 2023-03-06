@@ -21,7 +21,7 @@ export class ProductItemComponent implements OnInit {
     this.selectedProduct = product;
   }
 
-  addToCart (id: number) {
+  addToCart () {
     this.cart.addToCart(this.selectedProduct, this.quantity);
     this.quantity = 1;
     window.alert('Your product has been added to cart');
@@ -33,6 +33,8 @@ export class ProductItemComponent implements OnInit {
     this.quantity = 1;
   }
   ngOnInit(): void {
-    this.product = this.productService.getProducts();
+    this.productService.getProducts().subscribe(res => {
+      this.product = res
+    })
   }
 }
