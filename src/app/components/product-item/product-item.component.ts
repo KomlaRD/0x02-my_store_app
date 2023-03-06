@@ -33,7 +33,7 @@ export class ProductItemComponent implements OnInit {
     this.quantity = 1;
   }
   ngOnInit(): void {
-    this.productService.getProducts().subscribe(res => {
+   this.productService.getProducts().subscribe(res => {
       this.product = res
     })
   }
