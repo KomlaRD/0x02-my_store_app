@@ -10,7 +10,7 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class ProductItemComponent implements OnInit {
 
-  product: Products[];
+  products: Products[];
   selectedProduct: Products;
 
   // Number of products added to cart
@@ -21,20 +21,20 @@ export class ProductItemComponent implements OnInit {
     this.selectedProduct = product;
   }
 
-  addToCart () {
-    this.cart.addToCart(this.selectedProduct, this.quantity);
+  addToCart (products: Products, quantity: number) {
+    this.cart.addToCart(products, quantity);
     this.quantity = 1;
     window.alert('Your product has been added to cart');
   }
   
   constructor (private router: Router, private productService: ProductsService, private cart: CartService) {
     this.selectedProduct = new Products;
-    this.product = [];
+    this.products = [];
     this.quantity = 1;
   }
   ngOnInit(): void {
    this.productService.getProducts().subscribe(res => {
-      this.product = res
+      this.products = res
     })
   }
 }
