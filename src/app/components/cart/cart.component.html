@@ -8,7 +8,8 @@
         <br>
         <input type="number" placeholder="1" min="1" class="input">
         <br>
-        <h2>Total: {{ "$" + item.quantity * item.price }}</h2>
+        <h2>Total: {{ total() }}</h2>
+        <button mat-raised-button (click)="removeFromCart(item)">Remove item from cart</button>
     </section>
     <form #orderSubmit="ngForm" class="cart-panel; form-margin" novalidate (ngSubmit)="onSubmit()">
         <label class="label">Checkout form</label>
@@ -16,20 +17,20 @@
         <p>
             <mat-form-field>
                 <h2 class="label">Full Name</h2>
-                  <input #fullName="ngModel"  matInput type="text" name="Full name" placeholder="(minimum 3 characters)" minlength="3" required [(ngModel)]="user.fullName">
+                  <input #fullName="ngModel"  matInput type="text" name="Full name" placeholder="(minimum 3 characters)" minlength="3" required [(ngModel)]="user.fullName" (ngModelChange)="user.fullName">
                   <mat-error *ngIf="fullName.errors?.['required']">Name is required</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field>
                 <h2 class="label">Address</h2>
-                  <input #address="ngModel"  matInput type="address" name="Address" placeholder="(minimum 6 characters)" minlength="6" required [(ngModel)]="user.address">
+                  <input #address="ngModel"  matInput type="address" name="Address" placeholder="(minimum 6 characters)" minlength="6" required [(ngModel)]="user.address" (ngModelChange)="user.address">
                    <mat-error *ngIf="address.errors?.['required']">Address is required</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field>
                 <h2 class="label">Credit card number</h2>
                    <input #creditCard matInput type="number" name="Credit card number" placeholder="(16-digit-number)"
-                    autocomplete="off" minlength="16" required [(ngModel)]="user.creditCard">
+                    autocomplete="off" minlength="16" required [(ngModel)]="user.creditCard" (ngModelChange)="user.creditCard">
                     <mat-error>Credit card number is required</mat-error>
             </mat-form-field>
         </p>
