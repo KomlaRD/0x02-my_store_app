@@ -7,10 +7,9 @@
         <h2>{{ "$" + item.price }}</h2>
         <br>
         <input type="number" placeholder="1" min="1" class="input">
-        <br>
-        <h2>Total: {{ total() }}</h2>
         <button mat-raised-button (click)="removeFromCart(item)">Remove item from cart</button>
     </section>
+    <h2 class="cart-item-details">Total: {{ "$" + total() }}</h2>
     <form #orderSubmit="ngForm" class="cart-panel; form-margin" novalidate (ngSubmit)="onSubmit()">
         <label class="label">Checkout form</label>
         <br>
