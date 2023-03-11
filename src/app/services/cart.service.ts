@@ -21,7 +21,13 @@ export class CartService {
   this.items.push(product);
   }
 
-  removeFromCart(product: any): void {
-    this.items.splice(this.items.indexOf(product), this.items.length - 1);
+  removeFromCart(items: Items): void {
+    this.items.splice(this.items.indexOf(items), this.items.length - 1);
+}
+
+
+updateItems(item: any): void {
+  const itemsToUpdate = this.items.findIndex( x => x.id === item.id);
+  item[itemsToUpdate] = item;
 }
 }

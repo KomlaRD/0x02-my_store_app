@@ -6,7 +6,7 @@
         <br>
         <h2>{{ "$" + item.price }}</h2>
         <br>
-        <input type="number" placeholder="1" min="1" class="input">
+        <input type="number" placeholder="1" min="1" class="input" [ngModel]="item.quantity" (ngModelChange)="updateItem.emit(item)">
         <button mat-raised-button (click)="removeFromCart(item)">Remove item from cart</button>
     </section>
     <h2 class="cart-item-details">Total: {{ "$" + total() }}</h2>
